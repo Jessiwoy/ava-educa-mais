@@ -4,8 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | AVA-EDUCA+</title>
+  <link rel="stylesheet" href="./login.css">
 </head>
 <body>
-  <main></main>
+  <main class="pagina-login">
+    <section class="painel-institucional" aria-labelledby="titulo-institucional">
+      <div class="conteudo-institucional">
+        <div class="marca-ava" aria-labelledby="titulo-institucional">
+          <span class="marca-sctec">SCTEC</span>
+          <h1 id="titulo-institucional" class="marca-principal">
+            AVA-EDUCA<span class="simbolo-mais">+</span>
+          </h1>
+        </div>
+        <p class="texto-institucional">
+          Um espaço para facilitar o acompanhamento dos cursos e dos alunos.
+        </p>
+        <p class="identificacao-projeto">Projeto Avaliativo — Módulo 01</p>
+      </div>
+    </section>
+
+    <section class="area-login" aria-labelledby="titulo-login">
+      <div class="conteudo-login">
+        <header class="cabecalho-login">
+          <h2 id="titulo-login">Bem-vindo(a) ao AVA!</h2>
+          <p>Entre com seus dados para acessar o sistema.</p>
+        </header>
+
+        <form id="formulario-login" class="formulario-login">
+          <div class="grupo-campo">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seu.email@edutech.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="senha">Senha</label>
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              placeholder="Digite sua senha"
+              autocomplete="current-password"
+              required
+            >
+          </div>
+
+          <p id="mensagem-login" class="mensagem-login" aria-live="polite"></p>
+
+          <button type="submit" class="botao-entrar">Entrar</button>
+
+          <a href="#" id="link-recuperar-senha" class="link-recuperar-senha">
+            Esqueceu sua senha?
+          </a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./login.js"></script>
 </body>
 </html>
