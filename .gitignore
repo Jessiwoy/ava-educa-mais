@@ -1,0 +1,16 @@
+# Dependências e arquivos gerados
+node_modules/
+*.log
+
+# Configurações locais de editores
+.vscode/
+.idea/
+
+# Arquivos temporários do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Variáveis de ambiente e credenciais locais
+.env
+.env.*
+!.env.example
