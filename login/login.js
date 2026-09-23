@@ -5,6 +5,12 @@ const formularioLogin = document.querySelector("#formulario-login");
 const campoEmail = document.querySelector("#email");
 const campoSenha = document.querySelector("#senha");
 const mensagemLogin = document.querySelector("#mensagem-login");
+const linkRecuperarSenha = document.querySelector("#link-recuperar-senha");
+
+linkRecuperarSenha.addEventListener("click", (evento) => {
+  evento.preventDefault();
+  window.alert("A recuperação de senha está em construção.");
+});
 
 formularioLogin.addEventListener("submit", (evento) => {
   evento.preventDefault();
