@@ -12,7 +12,22 @@
     <p>Usuário: <span id="nome-usuario">Carregando...</span></p>
   </header>
 
-  <main></main>
+  <div class="estrutura-aplicacao">
+    <nav class="menu-lateral" aria-label="Navegação principal">
+      <button
+        type="button"
+        class="item-menu"
+        data-pagina="../dashboard/dashboard.html"
+      >
+        Dashboard
+      </button>
+      <button type="button" class="item-menu" disabled>Cursos</button>
+      <button type="button" class="item-menu ativo">Cadastro de Alunos</button>
+      <button type="button" class="item-menu">Sair</button>
+    </nav>
+
+    <main></main>
+  </div>
 
   <script type="module" src="./cadastro-aluno.js"></script>
 </body>
