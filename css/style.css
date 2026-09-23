@@ -1,1 +1,32 @@
 
+.cabecalho-aplicacao {
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d8dee6;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.cabecalho-aplicacao h1,
+.cabecalho-aplicacao p {
+  margin: 0;
+}
+
+.cabecalho-aplicacao h1 {
+  color: #006bb6;
+  font-size: 1.5rem;
+}
+
+.cabecalho-aplicacao p {
+  color: #5d6672;
+}
+
+@media (max-width: 768px) {
+  .cabecalho-aplicacao {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
