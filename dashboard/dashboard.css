@@ -1,1 +1,59 @@
 
+.conteudo-dashboard {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.cabecalho-dashboard {
+  margin-bottom: 1.5rem;
+}
+
+.cabecalho-dashboard h2,
+.cabecalho-dashboard p {
+  margin: 0;
+}
+
+.cabecalho-dashboard h2 {
+  color: #101828;
+  font-size: 1.75rem;
+}
+
+.cabecalho-dashboard p {
+  margin-top: 0.5rem;
+  color: #5d6672;
+}
+
+.lista-cursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+}
+
+.card-curso {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #d8dee6;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgb(16 24 40 / 8%);
+}
+
+.card-curso h3 {
+  margin: 0 0 1.25rem;
+  color: #0f6cbf;
+  font-size: 1.15rem;
+}
+
+.card-curso p {
+  margin: 0.6rem 0 0;
+  color: #5d6672;
+}
+
+.card-curso strong {
+  color: #101828;
+}
+
+.mensagem-cursos {
+  min-height: 1.25rem;
+  margin: 0 0 1rem;
+  color: #ca3120;
+}

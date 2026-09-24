@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard | AVA-EDUCA+</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./dashboard.css">
 </head>
 <body>
   <header class="cabecalho-aplicacao">
@@ -26,7 +27,21 @@
       <button type="button" class="item-menu" data-acao="sair">Sair</button>
     </nav>
 
-    <main></main>
+    <main>
+      <section class="conteudo-dashboard" aria-labelledby="titulo-dashboard">
+        <header class="cabecalho-dashboard">
+          <h2 id="titulo-dashboard">Meus cursos</h2>
+          <p>Acompanhe os cursos sob sua responsabilidade.</p>
+        </header>
+
+        <p id="mensagem-cursos" class="mensagem-cursos" aria-live="polite"></p>
+        <section
+          id="lista-cursos"
+          class="lista-cursos"
+          aria-label="Cursos do usuário"
+        ></section>
+      </section>
+    </main>
   </div>
 
   <script type="module" src="./dashboard.js"></script>
