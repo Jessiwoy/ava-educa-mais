@@ -66,6 +66,12 @@ export function validarDadosAluno(dados) {
   return erros;
 }
 
+function exibirMensagem(elemento, mensagem, estado = "erro") {
+  elemento.textContent = mensagem;
+  elemento.classList.toggle("sucesso", estado === "sucesso");
+  elemento.classList.toggle("erro", estado === "erro");
+}
+
 function inicializarValidacao() {
   const formularioAluno = document.querySelector("#formulario-aluno");
   const mensagemCadastro = document.querySelector("#mensagem-cadastro");
@@ -76,10 +82,80 @@ function inicializarValidacao() {
     const dados = Object.fromEntries(new FormData(formularioAluno));
     const erros = validarDadosAluno(dados);
 
-    mensagemCadastro.textContent = erros.join(" ");
+    const mensagem = erros.length > 0 ? erros.join(" ") : "Dados válidos.";
+    const estado = erros.length === 0 ? "sucesso" : "erro";
+    exibirMensagem(mensagemCadastro, mensagem, estado);
+  });
+}
 
-    if (erros.length === 0) {
-      mensagemCadastro.textContent = "Dados válidos.";
+function preencherEndereco(endereco) {
+  document.querySelector("#logradouro").value = endereco.logradouro;
+  document.querySelector("#bairro").value = endereco.bairro;
+  document.querySelector("#cidade").value = endereco.localidade;
+  document.querySelector("#estado").value = endereco.uf;
+}
+
+function limparEndereco() {
+  document.querySelector("#logradouro").value = "";
+  document.querySelector("#bairro").value = "";
+  document.querySelector("#cidade").value = "";
+  document.querySelector("#estado").value = "";
+}
+
+export async function buscarEnderecoPorCep(cep) {
+  const cepSemFormatacao = cep.replace(/\D/g, "");
+
+  if (cepSemFormatacao.length !== 8) {
+    throw new Error("Informe um CEP válido com 8 números.");
+  }
+
+  try {
+    const resposta = await fetch(
+      `https://viacep.com.br/ws/${cepSemFormatacao}/json/`
+    );
+
+    if (!resposta.ok) {
+      throw new Error("Não foi possível consultar o CEP.");
+    }
+
+    const endereco = await resposta.json();
+
+    if (endereco.erro) {
+      throw new Error("CEP não encontrado.");
+    }
+
+    return endereco;
+  } catch (erro) {
+    if (erro.message === "CEP não encontrado.") {
+      throw erro;
+    }
+
+    throw new Error("Não foi possível consultar o CEP. Tente novamente.");
+  }
+}
+
+function inicializarConsultaCep() {
+  const campoCep = document.querySelector("#cep");
+  const mensagemCep = document.querySelector("#mensagem-cep");
+
+  campoCep.addEventListener("blur", async () => {
+    if (!campoCep.value.trim()) {
+      return;
+    }
+
+    exibirMensagem(mensagemCep, "Consultando CEP...", "neutro");
+
+    try {
+      const endereco = await buscarEnderecoPorCep(campoCep.value);
+      preencherEndereco(endereco);
+      exibirMensagem(
+        mensagemCep,
+        "Endereço preenchido pelo CEP.",
+        "sucesso"
+      );
+    } catch (erro) {
+      limparEndereco();
+      exibirMensagem(mensagemCep, erro.message, "erro");
     }
   });
 }
@@ -89,4 +165,5 @@ if (verificarUsuarioLogado()) {
   inicializarMenuLateral();
   inicializarSaida();
   inicializarValidacao();
+  inicializarConsultaCep();
 }
