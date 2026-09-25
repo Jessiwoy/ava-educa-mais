@@ -83,10 +83,27 @@
   border-color: #0f6cbf;
 }
 
-.mensagem-cadastro {
+.mensagem-feedback {
   min-height: 1.25rem;
-  margin: 0;
+  margin: 0.4rem 0 0;
+  color: #5d6672;
+  font-size: 0.875rem;
+}
+
+.mensagem-feedback:empty {
+  display: none;
+}
+
+.mensagem-feedback.sucesso {
+  color: #357a32;
+}
+
+.mensagem-feedback.erro {
   color: #ca3120;
+}
+
+.mensagem-cadastro {
+  margin: 0;
 }
 
 .botao-salvar {

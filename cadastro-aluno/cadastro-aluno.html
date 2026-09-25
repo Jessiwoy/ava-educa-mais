@@ -91,6 +91,7 @@
               <div class="grupo-campo">
                 <label for="cep">CEP</label>
                 <input type="text" id="cep" name="cep" inputmode="numeric" required>
+                <p id="mensagem-cep" class="mensagem-feedback mensagem-cep" aria-live="polite"></p>
               </div>
 
               <div class="grupo-campo">
@@ -125,7 +126,11 @@
             </div>
           </fieldset>
 
-          <p id="mensagem-cadastro" class="mensagem-cadastro" aria-live="polite"></p>
+          <p
+            id="mensagem-cadastro"
+            class="mensagem-feedback mensagem-cadastro"
+            aria-live="polite"
+          ></p>
           <button type="submit" class="botao-salvar">Salvar</button>
         </form>
       </section>
