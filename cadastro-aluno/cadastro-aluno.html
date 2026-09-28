@@ -134,6 +134,32 @@
           <button type="submit" class="botao-salvar">Salvar</button>
         </form>
       </section>
+
+      <section class="secao-listagem" aria-labelledby="titulo-listagem">
+        <header class="cabecalho-listagem">
+          <h2 id="titulo-listagem">Alunos cadastrados</h2>
+          <p>Confira os alunos registrados na aplicação.</p>
+        </header>
+
+        <div class="container-tabela">
+          <table class="tabela-alunos">
+            <caption class="leitor-tela">Lista de alunos cadastrados</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Gênero</th>
+                <th scope="col">Data de nascimento</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela-alunos"></tbody>
+          </table>
+        </div>
+      </section>
     </main>
   </div>
 
