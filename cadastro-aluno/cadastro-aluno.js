@@ -1,6 +1,8 @@
 
 import { inicializarCabecalho } from "../js/cabecalho.js";
 import { inicializarMenuLateral } from "../js/menu-lateral.js";
+import { Aluno } from "../js/Aluno.js";
+import { cadastrarAluno } from "../js/alunos.js";
 import {
   inicializarSaida,
   verificarUsuarioLogado,
@@ -14,7 +16,7 @@ export function validarDadosAluno(dados) {
     "DD/MM/YYYY",
     true
   );
-  const dataInicial = window.moment("01/01/1990", "DD/MM/YYYY", true);
+  const dataInicial = window.moment("01/01/1900", "DD/MM/YYYY", true);
   const dataAtual = window.moment();
   const cpf = dados.cpf.replace(/\D/g, "");
   const telefone = dados.telefone.replace(/\D/g, "");
@@ -33,7 +35,7 @@ export function validarDadosAluno(dados) {
     !dataNascimento.isAfter(dataInicial, "day") ||
     !dataNascimento.isBefore(dataAtual, "day")
   ) {
-    erros.push("A data deve ser posterior a 01/01/1990 e anterior à data atual.");
+    erros.push("A data deve ser posterior a 01/01/1900 e anterior à data atual.");
   }
 
   if (cpf.length !== 11) {
@@ -75,6 +77,7 @@ function exibirMensagem(elemento, mensagem, estado = "erro") {
 function inicializarValidacao() {
   const formularioAluno = document.querySelector("#formulario-aluno");
   const mensagemCadastro = document.querySelector("#mensagem-cadastro");
+  const mensagemCep = document.querySelector("#mensagem-cep");
 
   formularioAluno.addEventListener("submit", (evento) => {
     evento.preventDefault();
@@ -82,9 +85,36 @@ function inicializarValidacao() {
     const dados = Object.fromEntries(new FormData(formularioAluno));
     const erros = validarDadosAluno(dados);
 
-    const mensagem = erros.length > 0 ? erros.join(" ") : "Dados válidos.";
-    const estado = erros.length === 0 ? "sucesso" : "erro";
-    exibirMensagem(mensagemCadastro, mensagem, estado);
+    if (erros.length > 0) {
+      exibirMensagem(mensagemCadastro, erros.join(" "), "erro");
+      return;
+    }
+
+    const aluno = new Aluno(
+      dados.nome,
+      dados.genero,
+      dados.dataNascimento,
+      dados.cpf,
+      dados.telefone,
+      dados.email,
+      dados.cep,
+      dados.cidade,
+      dados.estado,
+      dados.logradouro,
+      dados.numero,
+      dados.complemento,
+      dados.bairro
+    );
+
+    cadastrarAluno(aluno)
+      .then((mensagem) => {
+        formularioAluno.reset();
+        exibirMensagem(mensagemCep, "", "neutro");
+        exibirMensagem(mensagemCadastro, mensagem, "sucesso");
+      })
+      .catch((erro) => {
+        exibirMensagem(mensagemCadastro, erro, "erro");
+      });
   });
 }
 
