@@ -3,6 +3,7 @@ import { inicializarCabecalho } from "../js/cabecalho.js";
 import { inicializarMenuLateral } from "../js/menu-lateral.js";
 import { Aluno } from "../js/Aluno.js";
 import { cadastrarAluno } from "../js/alunos.js";
+import { alunos } from "../dados/listagem-alunos.js";
 import {
   inicializarSaida,
   verificarUsuarioLogado,
@@ -74,6 +75,43 @@ function exibirMensagem(elemento, mensagem, estado = "erro") {
   elemento.classList.toggle("erro", estado === "erro");
 }
 
+function formatarDataNascimento(dataNascimento) {
+  const data = window.moment(
+    dataNascimento,
+    ["DD/MM/YYYY", "YYYY-MM-DD"],
+    true
+  );
+
+  return data.isValid() ? data.format("DD/MM/YYYY") : dataNascimento;
+}
+
+function renderizarAlunos() {
+  const corpoTabela = document.querySelector("#corpo-tabela-alunos");
+  corpoTabela.replaceChildren();
+
+  alunos.forEach((aluno) => {
+    const linha = document.createElement("tr");
+    const dadosAluno = [
+      aluno.nome,
+      aluno.genero,
+      formatarDataNascimento(aluno.dataNascimento),
+      aluno.cpf,
+      aluno.telefone,
+      aluno.email,
+      aluno.cidade,
+      aluno.estado,
+    ];
+
+    dadosAluno.forEach((dado) => {
+      const celula = document.createElement("td");
+      celula.textContent = dado;
+      linha.append(celula);
+    });
+
+    corpoTabela.append(linha);
+  });
+}
+
 function inicializarValidacao() {
   const formularioAluno = document.querySelector("#formulario-aluno");
   const mensagemCadastro = document.querySelector("#mensagem-cadastro");
@@ -109,6 +147,7 @@ function inicializarValidacao() {
     cadastrarAluno(aluno)
       .then((mensagem) => {
         formularioAluno.reset();
+        renderizarAlunos();
         exibirMensagem(mensagemCep, "", "neutro");
         exibirMensagem(mensagemCadastro, mensagem, "sucesso");
       })
@@ -196,4 +235,5 @@ if (verificarUsuarioLogado()) {
   inicializarSaida();
   inicializarValidacao();
   inicializarConsultaCep();
+  renderizarAlunos();
 }
