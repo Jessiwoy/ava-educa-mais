@@ -14,13 +14,13 @@
 }
 
 .cabecalho-cadastro h2 {
-  color: #101828;
+  color: var(--texto-principal);
   font-size: 1.75rem;
 }
 
 .cabecalho-cadastro p {
   margin-top: 0.5rem;
-  color: #5d6672;
+  color: var(--texto-secundario);
 }
 
 .formulario-aluno {
@@ -32,14 +32,14 @@
 .secao-formulario {
   margin: 0;
   padding: 1.5rem;
-  background-color: #ffffff;
-  border: 1px solid #d8dee6;
+  background-color: var(--fundo-branco);
+  border: 1px solid var(--borda);
   border-radius: 0.5rem;
 }
 
 .secao-formulario legend {
   padding: 0 0.5rem;
-  color: #0f6cbf;
+  color: var(--azul-principal);
   font-size: 1.15rem;
   font-weight: 700;
 }
@@ -61,7 +61,7 @@
 }
 
 .grupo-campo label {
-  color: #101828;
+  color: var(--texto-principal);
   font-weight: 600;
 }
 
@@ -70,23 +70,23 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0.8rem;
-  color: #101828;
-  background-color: #ffffff;
-  border: 1px solid #aab3bf;
+  color: var(--texto-principal);
+  background-color: var(--fundo-branco);
+  border: 1px solid var(--borda-campo);
   border-radius: 0.25rem;
   font: inherit;
 }
 
 .grupo-campo input:focus,
 .grupo-campo select:focus {
-  outline: 0.2rem solid #eaf4fc;
-  border-color: #0f6cbf;
+  outline: 0.2rem solid var(--foco);
+  border-color: var(--azul-principal);
 }
 
 .mensagem-feedback {
   min-height: 1.25rem;
   margin: 0.4rem 0 0;
-  color: #5d6672;
+  color: var(--texto-secundario);
   font-size: 0.875rem;
 }
 
@@ -95,11 +95,11 @@
 }
 
 .mensagem-feedback.sucesso {
-  color: #357a32;
+  color: var(--sucesso);
 }
 
 .mensagem-feedback.erro {
-  color: #ca3120;
+  color: var(--erro);
 }
 
 .mensagem-cadastro {
@@ -109,8 +109,8 @@
 .botao-salvar {
   align-self: flex-start;
   padding: 0.85rem 2rem;
-  color: #ffffff;
-  background-color: #0f6cbf;
+  color: var(--fundo-branco);
+  background-color: var(--azul-principal);
   border: 0;
   border-radius: 0.35rem;
   cursor: pointer;
@@ -120,14 +120,14 @@
 
 .botao-salvar:hover,
 .botao-salvar:focus-visible {
-  background-color: #005caa;
+  background-color: var(--azul-links);
 }
 
 .secao-listagem {
   margin-top: 2rem;
   padding: 1.5rem;
-  background-color: #ffffff;
-  border: 1px solid #d8dee6;
+  background-color: var(--fundo-branco);
+  border: 1px solid var(--borda);
   border-radius: 0.5rem;
 }
 
@@ -137,13 +137,13 @@
 }
 
 .cabecalho-listagem h2 {
-  color: #101828;
+  color: var(--texto-principal);
   font-size: 1.5rem;
 }
 
 .cabecalho-listagem p {
   margin-top: 0.5rem;
-  color: #5d6672;
+  color: var(--texto-secundario);
 }
 
 .container-tabela {
@@ -155,25 +155,25 @@
   width: 100%;
   min-width: 60rem;
   border-collapse: collapse;
-  color: #101828;
+  color: var(--texto-principal);
 }
 
 .tabela-alunos th,
 .tabela-alunos td {
   padding: 0.85rem 0.75rem;
-  border-bottom: 1px solid #d8dee6;
+  border-bottom: 1px solid var(--borda);
   text-align: left;
   white-space: nowrap;
 }
 
 .tabela-alunos th {
-  color: #ffffff;
-  background-color: #0f6cbf;
+  color: var(--fundo-branco);
+  background-color: var(--azul-principal);
   font-weight: 700;
 }
 
 .tabela-alunos tbody tr:nth-child(even) {
-  background-color: #f8f9fa;
+  background-color: var(--fundo-claro);
 }
 
 .leitor-tela {

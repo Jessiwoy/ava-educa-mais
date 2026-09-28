@@ -5,9 +5,9 @@
 body {
   min-width: 320px;
   margin: 0;
-  color: #171b21;
-  background-color: #ffffff;
-  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--texto-principal);
+  background-color: var(--fundo-branco);
+  font-family: Inter, Arial, sans-serif;
 }
 
 .pagina-login {
@@ -22,8 +22,8 @@ body {
   align-items: flex-end;
   overflow: hidden;
   padding: 4rem clamp(2rem, 8vw, 7rem);
-  color: #ffffff;
-  background-color: #006bb6;
+  color: var(--fundo-branco);
+  background-color: var(--azul-principal);
 }
 
 .painel-institucional::before,
@@ -64,7 +64,7 @@ body {
 .marca-sctec {
   display: block;
   margin-bottom: 0.35rem;
-  color: #d8dee6;
+  color: var(--borda);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.28em;
@@ -72,7 +72,7 @@ body {
 
 .marca-principal {
   margin: 0;
-  color: #ffffff;
+  color: var(--fundo-branco);
   font-size: clamp(2.25rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
@@ -80,7 +80,7 @@ body {
 }
 
 .simbolo-mais {
-  color: #42b85c;
+  color: var(--verde-marca);
 }
 
 .texto-institucional {
@@ -102,7 +102,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 3rem clamp(2rem, 8vw, 7rem);
-  background-color: #ffffff;
+  background-color: var(--fundo-branco);
 }
 
 .conteudo-login {
@@ -115,13 +115,13 @@ body {
 
 .cabecalho-login h2 {
   margin: 0;
-  color: #171b21;
+  color: var(--texto-principal);
   font-size: clamp(1.75rem, 3vw, 2.25rem);
 }
 
 .cabecalho-login p {
   margin: 0.75rem 0 0;
-  color: #5d6672;
+  color: var(--texto-secundario);
 }
 
 .formulario-login {
@@ -137,40 +137,40 @@ body {
 }
 
 .grupo-campo label {
-  color: #171b21;
+  color: var(--texto-principal);
   font-weight: 600;
 }
 
 .grupo-campo input {
   width: 100%;
   padding: 1rem;
-  color: #171b21;
-  background-color: #ffffff;
-  border: 1px solid #aab3bf;
+  color: var(--texto-principal);
+  background-color: var(--fundo-branco);
+  border: 1px solid var(--borda-campo);
   border-radius: 0.25rem;
   font: inherit;
 }
 
 .grupo-campo input::placeholder {
-  color: #727d89;
+  color: var(--texto-placeholder);
 }
 
 .grupo-campo input:focus {
-  outline: 0.2rem solid #eaf4fc;
-  border-color: #006bb6;
+  outline: 0.2rem solid var(--foco);
+  border-color: var(--azul-principal);
 }
 
 .mensagem-login {
   min-height: 1.25rem;
   margin: -0.25rem 0 0;
-  color: #c62828;
+  color: var(--erro);
   font-size: 0.9rem;
 }
 
 .botao-entrar {
   padding: 1rem;
-  color: #ffffff;
-  background-color: #006bb6;
+  color: var(--fundo-branco);
+  background-color: var(--azul-principal);
   border: 0;
   border-radius: 0.35rem;
   cursor: pointer;
@@ -180,18 +180,18 @@ body {
 
 .botao-entrar:hover,
 .botao-entrar:focus-visible {
-  background-color: #1d2b3d;
+  background-color: var(--azul-links);
 }
 
 .link-recuperar-senha {
   align-self: flex-start;
-  color: #006bb6;
+  color: var(--azul-links);
   font-size: 0.95rem;
 }
 
 .link-recuperar-senha:hover,
 .link-recuperar-senha:focus-visible {
-  color: #1d2b3d;
+  color: var(--azul-escuro);
 }
 
 @media (max-width: 768px) {

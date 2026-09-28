@@ -1,8 +1,57 @@
 
+:root {
+  --azul-principal: #0f6cbf;
+  --azul-links: #005caa;
+  --azul-escuro: #343a40;
+  --texto-principal: #101828;
+  --texto-secundario: #5d6672;
+  --sucesso: #357a32;
+  --verde-marca: #42b85c;
+  --erro: #ca3120;
+  --fundo-claro: #f8f9fa;
+  --fundo-branco: #ffffff;
+  --borda: #d8dee6;
+  --borda-campo: #aab3bf;
+  --foco: #eaf4fc;
+  --texto-placeholder: #727d89;
+  --sombra-card: rgb(16 24 40 / 8%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--texto-principal);
+  background-color: var(--fundo-claro);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 0.2rem solid var(--foco);
+  outline-offset: 0.1rem;
+}
+
 .cabecalho-aplicacao {
   align-items: center;
-  background-color: #ffffff;
-  border-bottom: 1px solid #d8dee6;
+  background-color: var(--fundo-branco);
+  border-bottom: 1px solid var(--borda);
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
@@ -14,22 +63,22 @@
 }
 
 .cabecalho-aplicacao h1 {
-  color: #006bb6;
+  color: var(--azul-principal);
   font-size: 1.5rem;
 }
 
 .cabecalho-aplicacao p {
-  color: #5d6672;
+  color: var(--texto-secundario);
 }
 
 .estrutura-aplicacao {
   display: flex;
-  min-height: calc(100vh - 4.25rem);
+  min-height: calc(100vh - 8.25rem);
 }
 
 .menu-lateral {
-  background-color: #ffffff;
-  border-right: 1px solid #d8dee6;
+  background-color: var(--fundo-branco);
+  border-right: 1px solid var(--borda);
   display: flex;
   flex: 0 0 15rem;
   flex-direction: column;
@@ -39,7 +88,7 @@
 
 .item-menu {
   padding: 0.85rem 1rem;
-  color: #343a40;
+  color: var(--azul-escuro);
   background-color: transparent;
   border: 0;
   border-radius: 0.35rem;
@@ -50,17 +99,33 @@
 
 .item-menu:hover:not(:disabled),
 .item-menu:focus-visible {
-  background-color: #f8f9fa;
+  background-color: var(--fundo-claro);
 }
 
 .item-menu.ativo {
-  color: #0f6cbf;
-  background-color: #eaf4fc;
+  color: var(--azul-principal);
+  background-color: var(--foco);
 }
 
 .item-menu:disabled {
-  color: #aab3bf;
+  color: var(--borda-campo);
   cursor: not-allowed;
+}
+
+.rodape-aplicacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 5.5rem;
+  padding: 1.5rem;
+  color: var(--fundo-branco);
+  background-color: var(--azul-escuro);
+  text-align: center;
+}
+
+.rodape-aplicacao p {
+  margin: 0;
+  font-size: 0.875rem;
 }
 
 .estrutura-aplicacao main {
@@ -83,7 +148,7 @@
 
   .menu-lateral {
     border-right: 0;
-    border-bottom: 1px solid #d8dee6;
+    border-bottom: 1px solid var(--borda);
     flex: none;
     padding: 1rem;
   }
