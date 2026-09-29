@@ -6,8 +6,10 @@
   --texto-principal: #101828;
   --texto-secundario: #5d6672;
   --sucesso: #357a32;
+  --fundo-sucesso: #eef7ee;
   --verde-marca: #42b85c;
   --erro: #ca3120;
+  --fundo-erro: #fdf0ee;
   --fundo-claro: #f8f9fa;
   --fundo-branco: #ffffff;
   --borda: #d8dee6;
@@ -15,6 +17,7 @@
   --foco: #eaf4fc;
   --texto-placeholder: #727d89;
   --sombra-card: rgb(16 24 40 / 8%);
+  --sombra-card-hover: rgb(16 24 40 / 12%);
 }
 
 * {
@@ -55,6 +58,7 @@ select:focus-visible {
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
+  box-shadow: 0 0.15rem 0.5rem rgb(16 24 40 / 6%);
 }
 
 .cabecalho-aplicacao h1,
@@ -95,6 +99,7 @@ select:focus-visible {
   cursor: pointer;
   font: inherit;
   text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .item-menu:hover:not(:disabled),
@@ -125,6 +130,19 @@ select:focus-visible {
 
 .rodape-aplicacao p {
   margin: 0;
+  font-size: 0.875rem;
+}
+
+.indicador-obrigatorio {
+  margin-left: 0.1rem;
+  color: var(--texto-secundario);
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.legenda-obrigatorio {
+  margin: 0.75rem 0 0;
+  color: var(--texto-secundario);
   font-size: 0.875rem;
 }
 

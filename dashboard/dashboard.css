@@ -30,26 +30,52 @@
 }
 
 .card-curso {
+  display: flex;
+  min-height: 12rem;
+  flex-direction: column;
   padding: 1.5rem;
   background-color: var(--fundo-branco);
   border: 1px solid var(--borda);
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.75rem var(--sombra-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-curso:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.5rem 1rem var(--sombra-card-hover);
+  border-color: var(--borda-campo);
 }
 
 .card-curso h3 {
-  margin: 0 0 1.25rem;
+  margin: 0;
   color: var(--azul-principal);
   font-size: 1.15rem;
 }
 
-.card-curso p {
-  margin: 0.6rem 0 0;
-  color: var(--texto-secundario);
+.periodo-curso {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 
-.card-curso strong {
+.data-curso {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.data-curso span {
+  color: var(--texto-secundario);
+  font-size: 0.75rem;
+}
+
+.data-curso strong {
   color: var(--texto-principal);
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .mensagem-cursos {

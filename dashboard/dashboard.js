@@ -20,8 +20,16 @@ function renderizarCursos(cursosDoUsuario) {
     cardCurso.className = "card-curso";
     cardCurso.innerHTML = `
       <h3>${curso.nomeCurso}</h3>
-      <p><strong>Data de início:</strong> ${formatarData(curso.dataInicio)}</p>
-      <p><strong>Data de fim:</strong> ${formatarData(curso.dataFim)}</p>
+      <div class="periodo-curso" aria-label="Período do curso">
+        <div class="data-curso">
+          <span>Data de início</span>
+          <strong>${formatarData(curso.dataInicio)}</strong>
+        </div>
+        <div class="data-curso">
+          <span>Data de fim</span>
+          <strong>${formatarData(curso.dataFim)}</strong>
+        </div>
+      </div>
     `;
 
     listaCursos.appendChild(cardCurso);
