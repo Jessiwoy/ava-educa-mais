@@ -71,6 +71,10 @@ select:focus-visible {
   font-size: 1.5rem;
 }
 
+.simbolo-mais {
+  color: var(--verde-marca);
+}
+
 .cabecalho-aplicacao p {
   color: var(--texto-secundario);
 }
