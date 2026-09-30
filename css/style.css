@@ -178,10 +178,12 @@ select:focus-visible {
     border-right: 0;
     border-bottom: 1px solid var(--borda);
     flex: none;
-    padding: 1rem;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
   }
 
   .item-menu {
+    padding: 0.55rem 0.75rem;
     text-align: center;
   }
 
