@@ -208,11 +208,55 @@ body {
   }
 
   .painel-institucional {
-    min-height: 20rem;
-    padding: 3rem 1.5rem;
+    min-height: auto;
+    padding: 1.5rem 1.25rem;
+    align-items: center;
+  }
+
+  .marca-ava {
+    margin-bottom: 0.75rem;
+  }
+
+  .marca-principal {
+    font-size: 2rem;
+  }
+
+  .texto-institucional {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .identificacao-projeto {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
   }
 
   .area-login {
-    padding: 3rem 1.5rem 4rem;
+    align-items: flex-start;
+    padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .cabecalho-login {
+    margin-bottom: 1.25rem;
+  }
+
+  .formulario-login {
+    gap: 0.65rem;
+  }
+
+  .grupo-campo {
+    gap: 0.35rem;
+  }
+
+  .grupo-campo input {
+    padding: 0.75rem;
+  }
+
+  .mensagem-login {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .botao-entrar {
+    padding: 0.8rem;
   }
 }
