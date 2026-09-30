@@ -150,6 +150,7 @@ select:focus-visible {
   flex: 1;
   min-width: 0;
   padding: 2rem;
+  overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
@@ -158,6 +159,11 @@ select:focus-visible {
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
+  }
+
+  .cabecalho-aplicacao p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .estrutura-aplicacao {

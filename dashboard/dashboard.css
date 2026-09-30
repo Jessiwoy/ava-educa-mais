@@ -83,3 +83,20 @@
   margin: 0 0 1rem;
   color: var(--erro);
 }
+
+@media (max-width: 768px) {
+  .lista-cursos {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card-curso {
+    min-height: 11rem;
+    padding: 1.25rem;
+  }
+
+  .periodo-curso {
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+  }
+}

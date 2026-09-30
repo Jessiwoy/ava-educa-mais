@@ -232,6 +232,10 @@
     padding: 1rem;
   }
 
+  .container-tabela {
+    max-width: 100%;
+  }
+
   .botao-salvar {
     width: 100%;
   }
