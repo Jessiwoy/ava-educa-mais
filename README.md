@@ -121,9 +121,7 @@ Também pedi sugestões de acessibilidade, responsividade e organização do REA
 ```text
 ava-educa-plus/
 ├── assets/
-│   ├── favicon.svg
-│   ├── icons/
-│   └── images/
+│   └── favicon.svg
 ├── cadastro-aluno/
 │   ├── cadastro-aluno.css
 │   ├── cadastro-aluno.html
