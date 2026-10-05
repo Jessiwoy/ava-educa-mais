@@ -106,6 +106,16 @@ Durante o desenvolvimento foram utilizados conceitos fundamentais de HTML, CSS e
 - Media Queries;
 - tabela semântica com `table`, `thead` e `tbody`.
 
+## Uso da inteligência artificial
+
+Durante o desenvolvimento, também utilizei inteligência artificial como ferramenta de apoio, sempre revisando e validando as sugestões antes de aplicar qualquer alteração.
+
+No início, analisei o documento e defini que desenvolveria a aplicação de forma incremental, separando o trabalho por funcionalidades. A partir dessa decisão, usei a IA para me ajudar a estruturar o backlog. Depois revisei as tarefas e incluí os ajustes necessários.
+
+Também usei a IA como apoio na criação do favicon, na melhoria do CSS da tela de Login e nos elementos decorativos, como os círculos do painel azul. Algumas sugestões precisaram de ajustes durante os testes para se adequarem ao layout.
+
+Também pedi sugestões de acessibilidade, responsividade e organização do README. Em todos os casos, conferi o código, testei o comportamento e mantive somente o que estava dentro do escopo e que eu conseguia compreender e explicar. As decisões finais e a validação ficaram sob minha responsabilidade.
+
 ## Estrutura do projeto
 
 ```text
@@ -188,7 +198,7 @@ Não é necessário instalar dependências ou configurar backend para executar a
 Clone o repositório:
 
 ```bash
-git clone https://github.com/Jessiwoy/ava-educa-plus.git
+git clone https://github.com/Jessiwoy/ava-educa-mais.git
 ```
 
 Acesse o diretório do projeto:
@@ -199,7 +209,7 @@ cd ava-educa-plus
 
 Abra a pasta no VS Code e inicie um servidor HTTP local, como o Live Server. Depois, acesse o `index.html` pelo endereço local fornecido pelo servidor.
 
-O uso de um servidor HTTP é necessário porque a aplicação utiliza módulos JavaScript. Abrir o arquivo diretamente pelo protocolo `file://` pode impedir o carregamento dos módulos.
+O Live Server é uma extensão do VS Code que inicia um servidor HTTP local e permite visualizar o projeto no navegador. Esse formato é necessário porque a aplicação utiliza módulos JavaScript com `import` e `export`; abrir o arquivo diretamente pelo protocolo `file://` pode impedir o carregamento desses módulos.
 
 ## Credenciais para demonstração
 
@@ -261,9 +271,11 @@ Essas funcionalidades não foram implementadas porque estão fora do escopo defi
 
 ## Repositório
 
-O código-fonte está disponível em:
+Código-fonte: [repositório no GitHub](https://github.com/Jessiwoy/ava-educa-mais)
 
-https://github.com/Jessiwoy/ava-educa-plus
+Quadro Kanban: [acessar o quadro no Trello](https://trello.com/invite/b/6a6cf7131476b84204f96e97/ATTIdd88c6a24a8e8c1ce1f43777704ea1d1E509C913/projeto-avaliativo-modulo-1-sctec-jessica-woytuski)
+
+Vídeo de apresentação: [assistir ao vídeo no Google Drive](https://drive.google.com/file/d/16SDsWlOIe4oNAQNJx-adNLb3W9L-1LW7/view?usp=drive_link)
 
 ## Autor
 
