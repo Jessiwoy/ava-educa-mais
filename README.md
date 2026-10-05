@@ -202,7 +202,7 @@ git clone https://github.com/Jessiwoy/ava-educa-mais.git
 Acesse o diretório do projeto:
 
 ```bash
-cd ava-educa-plus
+cd ava-educa-mais
 ```
 
 Abra a pasta no VS Code e inicie um servidor HTTP local, como o Live Server. Depois, acesse o `index.html` pelo endereço local fornecido pelo servidor.
