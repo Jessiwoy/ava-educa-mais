@@ -1,5 +1,4 @@
-# Dependências e arquivos gerados
-node_modules/
+# Arquivos gerados
 *.log
 
 # Configurações locais de editores

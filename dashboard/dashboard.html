@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | AVA-EDUCA+</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+  <header class="cabecalho-aplicacao">
+    <h1>AVA-EDUCA<span class="simbolo-mais">+</span></h1>
+    <p>Usuário: <span id="nome-usuario">Carregando...</span></p>
+  </header>
+
+  <div class="estrutura-aplicacao">
+    <nav class="menu-lateral" aria-label="Navegação principal">
+      <button type="button" class="item-menu ativo">Dashboard</button>
+      <button type="button" class="item-menu" disabled>Cursos</button>
+      <button
+        type="button"
+        class="item-menu"
+        data-pagina="../cadastro-aluno/cadastro-aluno.html"
+      >
+        Cadastro de Alunos
+      </button>
+      <button type="button" class="item-menu" data-acao="sair">Sair</button>
+    </nav>
+
+    <main>
+      <section class="conteudo-dashboard" aria-labelledby="titulo-dashboard">
+        <header class="cabecalho-dashboard">
+          <h2 id="titulo-dashboard">Meus cursos</h2>
+          <p>Acompanhe os cursos sob sua responsabilidade.</p>
+        </header>
+
+        <p id="mensagem-cursos" class="mensagem-cursos" aria-live="polite"></p>
+        <section
+          id="lista-cursos"
+          class="lista-cursos"
+          aria-label="Cursos do usuário"
+        ></section>
+      </section>
+    </main>
+  </div>
+
+  <footer class="rodape-aplicacao">
+    <p>AVA-EDUCA+ · Apoio à equipe pedagógica</p>
+  </footer>
+
+  <script type="module" src="./dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+
+.conteudo-cadastro {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.cabecalho-cadastro {
+  margin-bottom: 1.5rem;
+}
+
+.cabecalho-cadastro h2,
+.cabecalho-cadastro p {
+  margin: 0;
+}
+
+.cabecalho-cadastro h2 {
+  color: var(--texto-principal);
+  font-size: 1.75rem;
+}
+
+.cabecalho-cadastro p {
+  margin-top: 0.5rem;
+  color: var(--texto-secundario);
+}
+
+.formulario-aluno {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.secao-formulario {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: var(--fundo-branco);
+  border: 1px solid var(--borda);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem var(--sombra-card);
+}
+
+.secao-formulario legend {
+  padding: 0 0.5rem;
+  color: var(--azul-principal);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.grade-campos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.campo-amplo {
+  grid-column: 1 / -1;
+}
+
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grupo-campo label {
+  color: var(--texto-principal);
+  font-weight: 600;
+}
+
+.grupo-campo input,
+.grupo-campo select {
+  width: 100%;
+  padding: 0.8rem;
+  color: var(--texto-principal);
+  background-color: var(--fundo-branco);
+  border: 1px solid var(--borda-campo);
+  border-radius: 0.25rem;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus {
+  outline: 0.2rem solid var(--foco);
+  border-color: var(--azul-principal);
+  box-shadow: 0 0 0 0.15rem var(--foco);
+}
+
+.mensagem-feedback {
+  min-height: 1.25rem;
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 1rem;
+  color: var(--texto-secundario);
+  border-radius: 0.35rem;
+  font-size: 0.875rem;
+}
+
+.mensagem-feedback:empty {
+  display: none;
+}
+
+.mensagem-feedback.sucesso {
+  color: var(--sucesso);
+  background-color: var(--fundo-sucesso);
+}
+
+.mensagem-feedback.erro {
+  color: var(--erro);
+  background-color: var(--fundo-erro);
+}
+
+.mensagem-cadastro {
+  margin: 0;
+}
+
+.mensagem-cep {
+  margin-top: 0.4rem;
+  padding: 0;
+  border-radius: 0;
+}
+
+.mensagem-cep.sucesso,
+.mensagem-cep.erro {
+  background-color: transparent;
+}
+
+.botao-salvar {
+  align-self: flex-start;
+  padding: 0.85rem 2rem;
+  color: var(--fundo-branco);
+  background-color: var(--azul-principal);
+  border: 0;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-salvar:hover {
+  transform: translateY(-0.1rem);
+}
+
+.botao-salvar:hover,
+.botao-salvar:focus-visible {
+  background-color: var(--azul-links);
+}
+
+.secao-listagem {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--fundo-branco);
+  border: 1px solid var(--borda);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem var(--sombra-card);
+}
+
+.cabecalho-listagem h2,
+.cabecalho-listagem p {
+  margin: 0;
+}
+
+.cabecalho-listagem h2 {
+  color: var(--texto-principal);
+  font-size: 1.5rem;
+}
+
+.cabecalho-listagem p {
+  margin-top: 0.5rem;
+  color: var(--texto-secundario);
+}
+
+.container-tabela {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+}
+
+.tabela-alunos {
+  width: 100%;
+  min-width: 60rem;
+  border-collapse: collapse;
+  color: var(--texto-principal);
+}
+
+.tabela-alunos th,
+.tabela-alunos td {
+  padding: 0.85rem 0.75rem;
+  border-bottom: 1px solid var(--borda);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tabela-alunos th {
+  color: var(--fundo-branco);
+  background-color: var(--azul-principal);
+  font-weight: 700;
+}
+
+.tabela-alunos tbody tr:nth-child(even) {
+  background-color: var(--fundo-claro);
+}
+
+.tabela-alunos tbody tr:hover {
+  background-color: var(--foco);
+}
+
+.leitor-tela {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .grade-campos {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-amplo {
+    grid-column: auto;
+  }
+
+  .secao-formulario {
+    padding: 1rem;
+  }
+
+  .secao-listagem {
+    padding: 1rem;
+  }
+
+  .container-tabela {
+    max-width: 100%;
+  }
+
+  .botao-salvar {
+    width: 100%;
+  }
+}

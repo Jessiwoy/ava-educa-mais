@@ -1,0 +1,258 @@
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--texto-principal);
+  background-color: var(--fundo-branco);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.pagina-login {
+  display: grid;
+  grid-template-columns: minmax(20rem, 1fr) minmax(24rem, 1fr);
+  min-height: 100vh;
+}
+
+.painel-institucional {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 4rem clamp(2rem, 8vw, 7rem);
+  color: var(--fundo-branco);
+  background-color: var(--azul-principal);
+}
+
+.painel-institucional::before,
+.painel-institucional::after {
+  position: absolute;
+  content: "";
+  border: 3rem solid rgb(255 255 255 / 8%);
+  border-radius: 45% 55% 50% 50%;
+  pointer-events: none;
+}
+
+.painel-institucional::before {
+  top: -16rem;
+  right: -13rem;
+  width: 38rem;
+  height: 32rem;
+  transform: rotate(-25deg);
+}
+
+.painel-institucional::after {
+  bottom: -19rem;
+  left: -15rem;
+  width: 34rem;
+  height: 28rem;
+  transform: rotate(25deg);
+}
+
+.conteudo-institucional {
+  position: relative;
+  z-index: 1;
+  max-width: 30rem;
+}
+
+.marca-ava {
+  margin: 0 0 1.5rem;
+}
+
+.marca-sctec {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--borda);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+}
+
+.marca-principal {
+  margin: 0;
+  color: var(--fundo-branco);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.texto-institucional {
+  max-width: 26rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.identificacao-projeto {
+  margin: 3rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(255 255 255 / 60%);
+  font-size: 0.95rem;
+}
+
+.area-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem clamp(2rem, 8vw, 7rem);
+  background-color: var(--fundo-branco);
+}
+
+.conteudo-login {
+  width: min(100%, 28rem);
+}
+
+.cabecalho-login {
+  margin-bottom: 2.5rem;
+}
+
+.cabecalho-login h2 {
+  margin: 0;
+  color: var(--texto-principal);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.cabecalho-login p {
+  margin: 0.75rem 0 0;
+  color: var(--texto-secundario);
+}
+
+.formulario-login {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grupo-campo label {
+  color: var(--texto-principal);
+  font-weight: 600;
+}
+
+.grupo-campo input {
+  width: 100%;
+  padding: 1rem;
+  color: var(--texto-principal);
+  background-color: var(--fundo-branco);
+  border: 1px solid var(--borda-campo);
+  border-radius: 0.25rem;
+  font: inherit;
+}
+
+.grupo-campo input::placeholder {
+  color: var(--texto-placeholder);
+}
+
+.grupo-campo input:focus {
+  outline: 0.2rem solid var(--foco);
+  border-color: var(--azul-principal);
+}
+
+.mensagem-login {
+  min-height: 1.25rem;
+  margin: -0.25rem 0 0;
+  padding: 0.75rem 1rem;
+  color: var(--erro);
+  background-color: var(--fundo-erro);
+  border-radius: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.mensagem-login:empty {
+  display: none;
+}
+
+.botao-entrar {
+  padding: 1rem;
+  color: var(--fundo-branco);
+  background-color: var(--azul-principal);
+  border: 0;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-entrar:hover {
+  transform: translateY(-0.1rem);
+}
+
+.botao-entrar:hover,
+.botao-entrar:focus-visible {
+  background-color: var(--azul-links);
+}
+
+.link-recuperar-senha {
+  align-self: flex-start;
+  color: var(--azul-links);
+  font-size: 0.95rem;
+}
+
+.link-recuperar-senha:hover,
+.link-recuperar-senha:focus-visible {
+  color: var(--azul-escuro);
+}
+
+@media (max-width: 768px) {
+  .pagina-login {
+    grid-template-columns: 1fr;
+  }
+
+  .painel-institucional {
+    min-height: auto;
+    padding: 1.5rem 1.25rem;
+    align-items: center;
+  }
+
+  .marca-ava {
+    margin-bottom: 0.75rem;
+  }
+
+  .marca-principal {
+    font-size: 2rem;
+  }
+
+  .texto-institucional {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .identificacao-projeto {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+  }
+
+  .area-login {
+    align-items: flex-start;
+    padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .cabecalho-login {
+    margin-bottom: 1.25rem;
+  }
+
+  .formulario-login {
+    gap: 0.65rem;
+  }
+
+  .grupo-campo {
+    gap: 0.35rem;
+  }
+
+  .grupo-campo input {
+    padding: 0.75rem;
+  }
+
+  .mensagem-login {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .botao-entrar {
+    padding: 0.8rem;
+  }
+}

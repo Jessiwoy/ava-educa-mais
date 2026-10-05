@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Aluno | AVA-EDUCA+</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./cadastro-aluno.css">
+</head>
+<body>
+  <header class="cabecalho-aplicacao">
+    <h1>AVA-EDUCA<span class="simbolo-mais">+</span></h1>
+    <p>Usuário: <span id="nome-usuario">Carregando...</span></p>
+  </header>
+
+  <div class="estrutura-aplicacao">
+    <nav class="menu-lateral" aria-label="Navegação principal">
+      <button
+        type="button"
+        class="item-menu"
+        data-pagina="../dashboard/dashboard.html"
+      >
+        Dashboard
+      </button>
+      <button type="button" class="item-menu" disabled>Cursos</button>
+      <button type="button" class="item-menu ativo">Cadastro de Alunos</button>
+      <button type="button" class="item-menu" data-acao="sair">Sair</button>
+    </nav>
+
+    <main>
+      <section class="conteudo-cadastro" aria-labelledby="titulo-cadastro">
+        <header class="cabecalho-cadastro">
+          <h2 id="titulo-cadastro">Cadastro de aluno</h2>
+          <p>Preencha os dados do aluno para realizar o cadastro.</p>
+          <p class="legenda-obrigatorio">
+            Campos marcados com <span class="indicador-obrigatorio" aria-hidden="true">*</span> são obrigatórios.
+          </p>
+        </header>
+
+        <form id="formulario-aluno" class="formulario-aluno">
+          <fieldset class="secao-formulario">
+            <legend>Dados pessoais</legend>
+
+            <div class="grade-campos">
+              <div class="grupo-campo campo-amplo">
+                <label for="nome">Nome completo <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="text" id="nome" name="nome" required>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="genero">Gênero <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <select id="genero" name="genero" required>
+                  <option value="">Selecione</option>
+                  <option value="Feminino">Feminino</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Outro">Outro</option>
+                  <option value="Prefiro não informar">Prefiro não informar</option>
+                </select>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="dataNascimento">Data de nascimento <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="dataNascimento"
+                  name="dataNascimento"
+                  placeholder="DD/MM/YYYY"
+                  inputmode="numeric"
+                  required
+                >
+              </div>
+
+              <div class="grupo-campo">
+                <label for="cpf">CPF <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="text" id="cpf" name="cpf" inputmode="numeric" required>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="telefone">Telefone <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="tel" id="telefone" name="telefone" required>
+              </div>
+
+              <div class="grupo-campo campo-amplo">
+                <label for="email">E-mail <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="secao-formulario">
+            <legend>Endereço</legend>
+
+            <div class="grade-campos">
+              <div class="grupo-campo">
+                <label for="cep">CEP <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="text" id="cep" name="cep" inputmode="numeric" required>
+                <p id="mensagem-cep" class="mensagem-feedback mensagem-cep" aria-live="polite"></p>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="estado">Estado <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="text" id="estado" name="estado" maxlength="2" required>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="cidade">Cidade <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="text" id="cidade" name="cidade" required>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="numero">Número <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="text" id="numero" name="numero" required>
+              </div>
+
+              <div class="grupo-campo campo-amplo">
+                <label for="logradouro">Logradouro <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="text" id="logradouro" name="logradouro" required>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="bairro">Bairro <span class="indicador-obrigatorio" aria-hidden="true">*</span></label>
+                <input type="text" id="bairro" name="bairro" required>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" name="complemento">
+              </div>
+            </div>
+          </fieldset>
+
+          <p
+            id="mensagem-cadastro"
+            class="mensagem-feedback mensagem-cadastro"
+            aria-live="polite"
+          ></p>
+          <button type="submit" class="botao-salvar">Salvar</button>
+        </form>
+      </section>
+
+      <section class="secao-listagem" aria-labelledby="titulo-listagem">
+        <header class="cabecalho-listagem">
+          <h2 id="titulo-listagem">Alunos cadastrados</h2>
+          <p>Confira os alunos registrados na aplicação.</p>
+        </header>
+
+        <div class="container-tabela">
+          <table class="tabela-alunos">
+            <caption class="leitor-tela">Lista de alunos cadastrados</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Gênero</th>
+                <th scope="col">Data de nascimento</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela-alunos"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="rodape-aplicacao">
+    <p>AVA-EDUCA+ · Apoio à equipe pedagógica</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/min/moment.min.js"></script>
+  <script type="module" src="./cadastro-aluno.js"></script>
+</body>
+</html>

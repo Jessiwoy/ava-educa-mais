@@ -1,0 +1,102 @@
+
+.conteudo-dashboard {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.cabecalho-dashboard {
+  margin-bottom: 1.5rem;
+}
+
+.cabecalho-dashboard h2,
+.cabecalho-dashboard p {
+  margin: 0;
+}
+
+.cabecalho-dashboard h2 {
+  color: var(--texto-principal);
+  font-size: 1.75rem;
+}
+
+.cabecalho-dashboard p {
+  margin-top: 0.5rem;
+  color: var(--texto-secundario);
+}
+
+.lista-cursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.25rem;
+}
+
+.card-curso {
+  display: flex;
+  min-height: 12rem;
+  flex-direction: column;
+  padding: 1.5rem;
+  background-color: var(--fundo-branco);
+  border: 1px solid var(--borda);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem var(--sombra-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-curso:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.5rem 1rem var(--sombra-card-hover);
+  border-color: var(--borda-campo);
+}
+
+.card-curso h3 {
+  margin: 0;
+  color: var(--azul-principal);
+  font-size: 1.15rem;
+}
+
+.periodo-curso {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.data-curso {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.data-curso span {
+  color: var(--texto-secundario);
+  font-size: 0.75rem;
+}
+
+.data-curso strong {
+  color: var(--texto-principal);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.mensagem-cursos {
+  min-height: 1.25rem;
+  margin: 0 0 1rem;
+  color: var(--erro);
+}
+
+@media (max-width: 768px) {
+  .lista-cursos {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card-curso {
+    min-height: 11rem;
+    padding: 1.25rem;
+  }
+
+  .periodo-curso {
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+  }
+}
